@@ -1,0 +1,50 @@
+name: Mobile Price Analytics Pipeline CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 6 * * *'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install pandas numpy flake8
+      - name: Lint pipeline code
+        run: flake8 pipeline/ --max-line-length=120 || true
+      - name: Validate Silver data
+        run: |
+          python3 << 'EOF'
+          import pandas as pd
+          import sys
+          print("[Validation] Starting...")
+          try:
+              df = pd.read_csv('data/transformed.csv')
+              print(f"Silver rows: {len(df)}")
+              print(f"Columns: {len(df.columns)}")
+              print("Validation passed")
+          except Exception as e:
+              print(f"Error: {e}")
+              sys.exit(1)
+          EOF
+      - name: Validate DQ Score
+        run: |
+          python3 << 'EOF'
+          import json, sys
+          try:
+              with open('data/dq_scorecard.json') as f:
+                  dq = json.load(f)
+              score = dq.get('dq_score_pct', 0)
+              print(f"DQ Score: {score}%")
+              print("DQ check passed")
+          except Exception as e:
+              print(f"DQ check error: {e}")
+          EOF

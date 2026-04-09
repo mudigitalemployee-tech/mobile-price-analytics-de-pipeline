@@ -1,0 +1,98 @@
+{
+  "dq_score_pct": 100.0,
+  "dq_status": "PASS",
+  "passed": 11,
+  "warnings": 0,
+  "failed": 0,
+  "total_checks": 11,
+  "checks": [
+    {
+      "category": "Completeness",
+      "column": "Brand",
+      "check": "Null % \u2264 5.0%",
+      "value": 0.0,
+      "threshold": 5.0,
+      "status": "PASS"
+    },
+    {
+      "category": "Completeness",
+      "column": "Model",
+      "check": "Null % \u2264 5.0%",
+      "value": 0.0,
+      "threshold": 5.0,
+      "status": "PASS"
+    },
+    {
+      "category": "Completeness",
+      "column": "Price_USD",
+      "check": "Null % \u2264 5.0%",
+      "value": 0.0,
+      "threshold": 5.0,
+      "status": "PASS"
+    },
+    {
+      "category": "Completeness",
+      "column": "RAM_GB",
+      "check": "Null % \u2264 5.0%",
+      "value": 0.0,
+      "threshold": 5.0,
+      "status": "PASS"
+    },
+    {
+      "category": "Completeness",
+      "column": "Storage_GB",
+      "check": "Null % \u2264 5.0%",
+      "value": 0.0,
+      "threshold": 5.0,
+      "status": "PASS"
+    },
+    {
+      "category": "Completeness",
+      "column": "Battery_mAh",
+      "check": "Null % \u2264 5.0%",
+      "value": 0.0,
+      "threshold": 5.0,
+      "status": "PASS"
+    },
+    {
+      "category": "Completeness",
+      "column": "Screen_Size_Inch",
+      "check": "Null % \u2264 5.0%",
+      "value": 0.0,
+      "threshold": 5.0,
+      "status": "PASS"
+    },
+    {
+      "category": "Completeness",
+      "column": "Camera_MP",
+      "check": "Null % \u2264 5.0%",
+      "value": 0.0,
+      "threshold": 5.0,
+      "status": "PASS"
+    },
+    {
+      "category": "Completeness",
+      "column": "OS",
+      "check": "Null % \u2264 5.0%",
+      "value": 0.0,
+      "threshold": 5.0,
+      "status": "PASS"
+    },
+    {
+      "category": "Completeness",
+      "column": "Release_Year",
+      "check": "Null % \u2264 5.0%",
+      "value": 0.0,
+      "threshold": 5.0,
+      "status": "PASS"
+    },
+    {
+      "category": "Uniqueness",
+      "column": "_all_",
+      "check": "Duplicate % \u2264 1.0%",
+      "value": 0.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    }
+  ]
+}
